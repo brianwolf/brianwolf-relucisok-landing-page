@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+
+  relucisok-landing-page:
+    container_name: relucisok-landing-page
+    hostname: relucisok-landing-page
+    image: docker.io/brianwolf94/relucisok-landing-page:latest
+    restart: always
+    expose:
+      - 80
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    name: docker-net
+    external: true

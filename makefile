@@ -1,6 +1,11 @@
+IMAGE=docker.io/brianwolf94/relucisok-landing-page:latest
+
 build b:
-	docker build -t relucisok-2 .
+	docker build -t $(IMAGE) .
 
 
 run r:
-	docker run -it --rm --name relucisok-2 -p 8080:80 relucisok-2 
+	docker run -it --rm --name relucisok-landing-page -p 8080:80 $(IMAGE) 
+
+push p:
+	docker push $(IMAGE)
